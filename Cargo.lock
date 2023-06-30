@@ -3746,8 +3746,7 @@ dependencies = [
 [[package]]
 name = "yubihsm"
 version = "0.41.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d479bdaa16917b3ff94bd09e72536369cdb2e167126ec908dae4cf934c19eb01"
+source = "git+https://github.com/ChorusOne/yubihsm.rs?tag=v0.41.0-1#37c87c5e159469e5d1afb90c4f133427b698b0a7"
 dependencies = [
  "aes",
  "bitflags",
