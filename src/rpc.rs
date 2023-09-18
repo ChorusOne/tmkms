@@ -194,7 +194,7 @@ impl Response {
 /// Read a message from a Secret Connection
 // TODO(tarcieri): extract this into Secret Connection
 fn read_msg(conn: &mut impl Read) -> Result<Vec<u8>, Error> {
-    let mut buf = vec![0; DATA_MAX_SIZE];
+    let mut buf = vec![0; DATA_MAX_SIZE * 10];
     let buf_read = conn.read(&mut buf)?;
     buf.truncate(buf_read);
     Ok(buf)
