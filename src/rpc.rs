@@ -196,6 +196,16 @@ impl Response {
 fn read_msg(conn: &mut impl Read) -> Result<Vec<u8>, Error> {
     let mut buf = vec![0; DATA_MAX_SIZE * 10];
     let buf_read = conn.read(&mut buf)?;
+
+    // Safe implementations must guarantee that `.read()` returns n,
+    // where `0 <= n <= buf.len()`.
+    if buf_read == buf.len() {
+        warn!(
+            "message took entire buffer or overflowed it: {} bytes",
+            buf_read
+        );
+    }
+
     buf.truncate(buf_read);
     Ok(buf)
 }
