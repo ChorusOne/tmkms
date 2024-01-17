@@ -2262,7 +2262,7 @@ dependencies = [
 [[package]]
 name = "tendermint"
 version = "0.34.0"
-source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1#823e79c21494061dc77944bb5eec433e42de8446"
+source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.4#3fb5c70f4f1d29ad83cb5d7334da9acfdd4cee04"
 dependencies = [
  "bytes",
  "digest 0.10.7",
@@ -2292,7 +2292,7 @@ dependencies = [
 [[package]]
 name = "tendermint-config"
 version = "0.34.0"
-source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1#823e79c21494061dc77944bb5eec433e42de8446"
+source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.4#3fb5c70f4f1d29ad83cb5d7334da9acfdd4cee04"
 dependencies = [
  "flex-error",
  "serde",
@@ -2305,7 +2305,7 @@ dependencies = [
 [[package]]
 name = "tendermint-p2p"
 version = "0.34.0"
-source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1#823e79c21494061dc77944bb5eec433e42de8446"
+source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.4#3fb5c70f4f1d29ad83cb5d7334da9acfdd4cee04"
 dependencies = [
  "aead 0.4.3",
  "chacha20poly1305",
@@ -2330,7 +2330,7 @@ dependencies = [
 [[package]]
 name = "tendermint-proto"
 version = "0.34.0"
-source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1#823e79c21494061dc77944bb5eec433e42de8446"
+source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.4#3fb5c70f4f1d29ad83cb5d7334da9acfdd4cee04"
 dependencies = [
  "bytes",
  "flex-error",
@@ -2347,7 +2347,7 @@ dependencies = [
 [[package]]
 name = "tendermint-std-ext"
 version = "0.34.0"
-source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1#823e79c21494061dc77944bb5eec433e42de8446"
+source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.4#3fb5c70f4f1d29ad83cb5d7334da9acfdd4cee04"
 
 [[package]]
 name = "termcolor"

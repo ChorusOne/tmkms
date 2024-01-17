@@ -85,7 +85,7 @@ all-features = true
 
 
 [patch.crates-io]
-tendermint = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.3", package = "tendermint", features = ["secp256k1"] }
-tendermint-config = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.3", package = "tendermint-config" }
-tendermint-p2p = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.3", package = "tendermint-p2p" }
-tendermint-proto = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.3", package = "tendermint-proto" }
+tendermint = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.4", package = "tendermint", features = ["secp256k1"] }
+tendermint-config = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.4", package = "tendermint-config" }
+tendermint-p2p = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.4", package = "tendermint-p2p" }
+tendermint-proto = { git = "https://github.com/qezz/tendermint-rs", tag = "v0.34.0-tcp-conn-patch.4", package = "tendermint-proto" }
