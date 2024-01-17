@@ -518,7 +518,7 @@ checksum = "32560304ab4c365791fd307282f76637213d8083c1a98490c35159cd67852237"
 dependencies = [
  "prost",
  "prost-types",
- "tendermint-proto 0.34.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tendermint-proto",
 ]
 
 [[package]]
@@ -537,7 +537,7 @@ dependencies = [
  "serde_json",
  "signature",
  "subtle-encoding",
- "tendermint 0.34.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tendermint",
  "thiserror",
 ]
 
@@ -2262,37 +2262,6 @@ dependencies = [
 [[package]]
 name = "tendermint"
 version = "0.34.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc2294fa667c8b548ee27a9ba59115472d0a09c2ba255771092a7f1dcf03a789"
-dependencies = [
- "bytes",
- "digest 0.10.7",
- "ed25519",
- "ed25519-consensus",
- "flex-error",
- "futures",
- "k256",
- "num-traits",
- "once_cell",
- "prost",
- "prost-types",
- "ripemd",
- "serde",
- "serde_bytes",
- "serde_json",
- "serde_repr",
- "sha2 0.10.8",
- "signature",
- "subtle",
- "subtle-encoding",
- "tendermint-proto 0.34.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "time",
- "zeroize",
-]
-
-[[package]]
-name = "tendermint"
-version = "0.34.0"
 source = "git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1#823e79c21494061dc77944bb5eec433e42de8446"
 dependencies = [
  "bytes",
@@ -2315,7 +2284,7 @@ dependencies = [
  "signature",
  "subtle",
  "subtle-encoding",
- "tendermint-proto 0.34.0 (git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1)",
+ "tendermint-proto",
  "time",
  "zeroize",
 ]
@@ -2328,7 +2297,7 @@ dependencies = [
  "flex-error",
  "serde",
  "serde_json",
- "tendermint 0.34.0 (git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1)",
+ "tendermint",
  "toml",
  "url 2.4.1",
 ]
@@ -2351,29 +2320,11 @@ dependencies = [
  "sha2 0.10.8",
  "signature",
  "subtle",
- "tendermint 0.34.0 (git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1)",
- "tendermint-proto 0.34.0 (git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1)",
+ "tendermint",
+ "tendermint-proto",
  "tendermint-std-ext",
  "x25519-dalek",
  "zeroize",
-]
-
-[[package]]
-name = "tendermint-proto"
-version = "0.34.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2cc728a4f9e891d71adf66af6ecaece146f9c7a11312288a3107b3e1d6979aaf"
-dependencies = [
- "bytes",
- "flex-error",
- "num-derive",
- "num-traits",
- "prost",
- "prost-types",
- "serde",
- "serde_bytes",
- "subtle-encoding",
- "time",
 ]
 
 [[package]]
@@ -2525,10 +2476,10 @@ dependencies = [
  "subtle",
  "subtle-encoding",
  "tempfile",
- "tendermint 0.34.0 (git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1)",
+ "tendermint",
  "tendermint-config",
  "tendermint-p2p",
- "tendermint-proto 0.34.0 (git+https://github.com/qezz/tendermint-rs?tag=v0.34.0-tcp-conn-patch.1)",
+ "tendermint-proto",
  "thiserror",
  "url 2.4.1",
  "uuid",
