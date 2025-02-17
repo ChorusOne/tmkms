@@ -215,9 +215,9 @@ checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
 
 [[package]]
 name = "aws-lc-rs"
-version = "1.11.1"
+version = "1.12.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f47bb8cc16b669d267eeccf585aea077d0882f4777b1c1f740217885d6e6e5a3"
+checksum = "4c2b7ddaa2c56a367ad27a094ad8ef4faacf8a617c2575acb2ba88949df999ca"
 dependencies = [
  "aws-lc-sys",
  "paste",
@@ -226,16 +226,15 @@ dependencies = [
 
 [[package]]
 name = "aws-lc-sys"
-version = "0.23.1"
+version = "0.25.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2101df3813227bbaaaa0b04cd61c534c7954b22bd68d399b440be937dc63ff7"
+checksum = "54ac4f13dad353b209b34cbec082338202cbc01c8f00336b55c750c13ac91f8f"
 dependencies = [
  "bindgen",
  "cc",
  "cmake",
  "dunce",
  "fs_extra",
- "libc",
  "paste",
 ]
 
@@ -1758,7 +1757,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc2f4eb4bc735547cfed7c0a4922cbd04a4655978c09b54f1f7b228750664c34"
 dependencies = [
  "cfg-if 1.0.0",
- "windows-targets 0.48.5",
+ "windows-targets 0.52.6",
 ]
 
 [[package]]
@@ -1809,9 +1808,9 @@ dependencies = [
 
 [[package]]
 name = "log"
-version = "0.4.22"
+version = "0.4.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
+checksum = "04cbf5b083de1c7e0222a7a51dbfdba1cbe1c6ab0b15e29fff3f6c077fd9cd9f"
 
 [[package]]
 name = "matchers"
@@ -2557,9 +2556,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.20"
+version = "0.23.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5065c3f250cbd332cd894be57c40fa52387247659b14a2d6041d121547903b1b"
+checksum = "47796c98c480fce5406ef69d1c76378375492c3b0a0de587be0c1d9feb12f395"
 dependencies = [
  "aws-lc-rs",
  "log",
@@ -2582,9 +2581,9 @@ dependencies = [
 
 [[package]]
 name = "rustls-pki-types"
-version = "1.10.0"
+version = "1.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16f1201b3c9a7ee8039bcadc17b7e605e2945b27eee7631788c1bd2b0643674b"
+checksum = "917ce264624a4b4db1c364dcc35bfca9ded014d0a958cd47ad3e960e988ea51c"
 
 [[package]]
 name = "rustls-webpki"
@@ -3499,15 +3498,14 @@ checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
 
 [[package]]
 name = "ureq"
-version = "3.0.0-rc3"
-source = "git+https://github.com/algesten/ureq.git?tag=3.0.0-rc3#8231cf8290cd2b7767d4bb7a59c5140fda8c9f93"
+version = "3.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b2916852be768844b6e9cbe107358b5bc40a696bd6dc8e036c9f80c731242c9c"
 dependencies = [
  "base64 0.22.1",
- "cc",
  "cookie_store",
  "flate2",
  "log",
- "once_cell",
  "percent-encoding 2.3.1",
  "rustls",
  "rustls-pemfile",
@@ -3521,14 +3519,14 @@ dependencies = [
 
 [[package]]
 name = "ureq-proto"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dcec9cbfbf05a7feef00db0295c6183f468635c7adb12a31e941f3660b071bff"
+checksum = "2c51fe73e1d8c4e06bb2698286f7e7453c6fc90528d6d2e7fc36bb4e87fe09b1"
 dependencies = [
+ "base64 0.22.1",
  "http 1.2.0",
  "httparse",
  "log",
- "url 2.5.2",
 ]
 
 [[package]]
@@ -3699,9 +3697,9 @@ checksum = "65fc09f10666a9f147042251e0dda9c18f166ff7de300607007e96bdebc1068d"
 
 [[package]]
 name = "webpki-roots"
-version = "0.26.7"
+version = "0.26.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d642ff16b7e79272ae451b7322067cdc17cadf68c23264be9d94a32319efe7e"
+checksum = "2210b291f7ea53617fbafcc4939f10914214ec15aace5ba62293a668f322c5c9"
 dependencies = [
  "rustls-pki-types",
 ]
