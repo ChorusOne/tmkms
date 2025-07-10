@@ -17,15 +17,18 @@ rust-version = "1.74"
 
 [dependencies]
 abscissa_core = "0.8"
+base64 = "0.22.1"
 bytes = "1"
 chrono = "0.4"
 clap = "4"
 cosmrs = "0.22"
 ed25519 = "2"
 ed25519-consensus = "2"
+ed25519-dalek = {version = "2", features = ["hazmat"]}
 elliptic-curve = { version = "0.13", features = ["pkcs8"], optional = true }
 eyre = "0.6"
 getrandom = "0.2"
+hex = "0.4.3"
 hkd32 = { version = "0.7", default-features = false, features = ["mnemonic"] }
 hkdf = "0.12"
 k256 = { version = "0.13", features = ["ecdsa", "sha256"] }
