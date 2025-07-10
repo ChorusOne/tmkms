@@ -51,6 +51,10 @@ pub enum KeyFormat {
     #[default]
     Base64,
 
+    /// TODO docstring
+    #[serde(rename = "base64_expanded")]
+    Base64Expanded,
+
     /// JSON
     #[serde(rename = "json")]
     Json,
@@ -61,6 +65,7 @@ impl FromStr for KeyFormat {
     fn from_str(s: &str) -> Result<Self, Error> {
         let format = match s {
             "base64" => KeyFormat::Base64,
+            "base64_expanded" => KeyFormat::Base64Expanded,
             "json" => KeyFormat::Json,
             other => fail!(ConfigError, "invalid key format: {}", other),
         };
