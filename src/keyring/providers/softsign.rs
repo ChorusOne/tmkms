@@ -29,7 +29,18 @@ struct ExpandedDalekSigner {
 
 impl Signer<DalekSignature> for ExpandedDalekSigner {
     fn try_sign(&self, msg: &[u8]) -> Result<DalekSignature, signature::Error> {
-        Ok(raw_sign::<Sha512>(&self.expanded, msg, &self.verifying_key))
+        let signature = raw_sign::<Sha512>(&self.expanded, msg, &self.verifying_key);
+
+        match self.verifying_key.verify_strict(msg, &signature) {
+            Ok(()) => {
+                info!("signature verification passed for message");
+                Ok(signature)
+            }
+            Err(e) => {
+                error!("signature verification failed for message: {}", e);
+                Err(e)
+            }
+        }
     }
 }
 
