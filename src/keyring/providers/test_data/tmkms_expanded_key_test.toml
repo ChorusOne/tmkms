@@ -1,0 +1,22 @@
+[[chain]]
+id = "cosmoshub-4"
+state_file = "cons.json"
+
+[chain.key_format]
+account_key_prefix = "cosmos"
+consensus_key_prefix = "cosmosvalconspub"
+type = "bech32"
+
+[[validator]]
+addr = "tcp://192.168.0.5:26558"
+chain_id = "cosmoshub-4"
+protocol_version = "v0.34"
+reconnect = true
+secret_key = "/Users/pyoxa/chorusone/git/bullshit/secrets/kms-identity.key"
+
+[providers]
+[[providers.softsign]]
+chain_ids = [ "cosmoshub-4" ]
+key_type = "consensus"
+key_format = "base64_expanded"
+path = "/tmp/privkey_expanded"
