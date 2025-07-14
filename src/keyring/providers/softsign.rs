@@ -209,3 +209,68 @@ fn load_secp256k1_key(config: &SoftsignConfig) -> Result<ecdsa::SigningKey, Erro
 
     Ok(secret_key)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::chain;
+    use crate::config::KmsConfig;
+    use std::fs;
+    use std::path::PathBuf;
+    use tempfile::tempdir;
+
+    #[test]
+    fn compare_signatures() -> anyhow::Result<()> {
+        let payload_str = "70080211981296010000000022480a20bb9d2c961d59dd6e8344b317da5c273315fe2ce8ebd46d96785faedafc2148a6122408011220e586a4576883e153a7252fa39a0becb8785e57762c98393fe0cf761a1e79db9d2a0c08e48fd3c30610a7c78ce602320b636f736d6f736875622d34";
+        let mut payload = vec![0u8; payload_str.len() / 2];
+        hex::decode_to_slice(payload_str, &mut payload)?;
+
+        let crate_root = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let normal_config_path =
+            crate_root.join("src/keyring/providers/test_data/tmkms_expanded_regular_key.toml");
+        let expanded_config_path =
+            crate_root.join("src/keyring/providers/test_data/tmkms_expanded_key_test.toml");
+
+        let mut normal_config: KmsConfig =
+            toml::from_str(&fs::read_to_string(&normal_config_path)?)?;
+
+        let temp_home_normal = tempdir()?;
+        normal_config.chain[0].state_file = Some(temp_home_normal.path().join("state-normal.json"));
+
+        let mut normal_registry = chain::Registry::default();
+        for chain_config in &normal_config.chain {
+            normal_registry.register_chain(chain::Chain::from_config(chain_config)?)?;
+        }
+        init(&mut normal_registry, &normal_config.providers.softsign)?;
+        let normal_chain_id = "cosmoshub-4".try_into()?;
+        let normal_chain = normal_registry.get_chain(&normal_chain_id).unwrap();
+        let normal_signature = normal_chain.keyring.sign(None, &payload)?;
+        let normal_sig_bytes = normal_signature.to_vec();
+
+        let mut expanded_config: KmsConfig =
+            toml::from_str(&fs::read_to_string(&expanded_config_path)?)?;
+        let temp_home_expanded = tempdir()?;
+        expanded_config.chain[0].state_file =
+            Some(temp_home_expanded.path().join("state-expanded.json"));
+
+        let mut expanded_registry = chain::Registry::default();
+        for chain_config in &expanded_config.chain {
+            expanded_registry.register_chain(chain::Chain::from_config(chain_config)?)?;
+        }
+        init(&mut expanded_registry, &expanded_config.providers.softsign)?;
+
+        let expanded_chain_id = "cosmoshub-4".try_into()?;
+        let expanded_chain = expanded_registry.get_chain(&expanded_chain_id).unwrap();
+        let expanded_signature = expanded_chain.keyring.sign(None, &payload)?;
+        let expanded_sig_bytes = expanded_signature.to_vec();
+        println!("regular key sig: {}", base64::encode(&normal_sig_bytes));
+        println!("expanded key sig: {}", base64::encode(&expanded_sig_bytes));
+
+        assert_eq!(
+            normal_sig_bytes, expanded_sig_bytes,
+            "the signatures from the normal and expanded keys must be identical!"
+        );
+
+        Ok(())
+    }
+}
